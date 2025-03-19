@@ -22,7 +22,7 @@ button,
 input[type=submit],
 input[type=button]
 {
-color:white; background:skyblue;
+color:white; background:grey;
 border: 1px solid transparent;
 cursor:pointer;
 align-items: center;

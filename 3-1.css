@@ -29,7 +29,7 @@ button,
 input[type=submit],
 input[type=button]
 {
-color:white; background:grey;
+color:black; background:grey;
 border: 1px solid transparent;
 cursor:pointer;
 align-items: center;

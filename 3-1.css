@@ -35,7 +35,7 @@ cursor:pointer;
 align-items: center;
 }
 
-button:hover,input[type=submit]:hover,input[type=button]:hover{background:white; }
+button:hover,input[type=submit]:hover,input[type=button]:hover{background:powderblue; }
 
 ul {margin: 0; padding: 0; list-style-type:disc; }
 li {padding: 0; left: 0; }

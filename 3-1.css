@@ -29,13 +29,13 @@ button,
 input[type=submit],
 input[type=button]
 {
-color:black; background:grey;
+color:white; background:black;
 border: 1px solid transparent;
 cursor:pointer;
 align-items: center;
 }
 
-button:hover,input[type=submit]:hover,input[type=button]:hover{background:powderblue; }
+button:hover,input[type=submit]:hover,input[type=button]:hover{background:gray; }
 
 ul {margin: 0; padding: 0; list-style-type:disc; }
 li {padding: 0; left: 0; }

@@ -41,12 +41,22 @@ table tr { background:#f8f8f8; }
 table tr:nth-child(even){ background:#fff;}
 table th { height:37px; }
 
+#paragraf h1, #paragraf h2 {
+    margin: 20px 0;
+    padding: 10px 0;
+}
+
 #paragraf p {
     margin: 20px 0;
     padding: 10px;
 }
 
 @media (max-width: 600px) {
+    #paragraf h1, #paragraf h2 {
+        margin: 10px 0;
+        padding: 5px 0;
+    }
+
     #paragraf p {
         margin: 10px 0;
         padding: 5px;

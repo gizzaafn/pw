@@ -8,6 +8,13 @@ line-height: 1.5;
 letter-spacing: 0.5px;
 }
 
+form {
+  float: left;
+  width: 50%;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+
 input,
 select
 {
@@ -41,24 +48,42 @@ table tr { background:#f8f8f8; }
 table tr:nth-child(even){ background:#fff;}
 table th { height:37px; }
 
-#paragraf h1, #paragraf h2 {
-    margin: 20px 0;
-    padding: 10px 0;
+#paragraf {
+  clear: both;
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+}
+
+#paragraf h1, 
+#paragraf h2 {
+  display: block;
+  width: 100%;
+  clear: both;
+  margin: 10px 0;
 }
 
 #paragraf p {
-    margin: 20px 0;
-    padding: 10px;
+  display: block;
+  width: 100%;
+  clear: both;
 }
 
-@media (max-width: 600px) {
-    #paragraf h1, #paragraf h2 {
-        margin: 10px 0;
-        padding: 5px 0;
-    }
+ul, ol {
+  clear: both;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
 
-    #paragraf p {
-        margin: 10px 0;
-        padding: 5px;
-    }
+/* Media query untuk layar kecil */
+@media screen and (max-width: 700px) {
+  form {
+    width: 100%;
+    float: none;
+  }
+  
+  #paragraf, #paragraf h1, #paragraf h2, #paragraf p {
+    padding-left: 0;
+    margin-left: 0;
+  }
 }

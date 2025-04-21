@@ -7,22 +7,58 @@
     <style>
         body { font-family: Arial, sans-serif; margin: 20px; padding: 0; }
         h1 { color: #2980b9; }
-        .box { width: 100px; height: 100px; background-color: #3498db; margin: 10px; }
-        button { padding: 10px 20px; border: none; background-color: #2ecc71; color: white; cursor: pointer; }
+        .box { width: 100px; height: 100px; background-color: #3498db; margin: 10px 0; }
+        button { padding: 10px 20px; border: none; background-color: #2ecc71; color: white; cursor: pointer; margin: 10px 0; display: block; }
+        .input-container { margin: 10px 0; }
+        label { display: block; margin-bottom: 5px; }
+        input[type="color"] { padding: 2px; width: 50px; height: 30px; }
     </style>
 </head>
 <body>
     <h1>JavaScript & DOM (Document Object Model)</h1>
     <p>Contoh manipulasi DOM dengan JavaScript:</p>
+    
+    <!-- Kotak warna -->
     <div class="box" id="colorBox"></div>
+    
+    <!-- Tombol ubah warna -->
     <button onclick="changeColor()">Ubah Warna</button>
-
+    
+    <!-- Pilih warna -->
+    <div class="input-container">
+        <label for="colorInput">Pilih Warna:</label>
+        <input type="color" id="colorInput" value="#3498db">
+    </div>
+    
+    <!-- Tombol terapkan warna -->
+    <button onclick="applyCustomColor()">Terapkan Warna</button>
+    
     <script>
         // Seleksi elemen DOM dan event handling
         function changeColor() {
             const box = document.getElementById('colorBox');
             box.style.backgroundColor = box.style.backgroundColor === 'tomato' ? '#3498db' : 'tomato';
+            
+            // Update input warna
+            const colorInput = document.getElementById('colorInput');
+            if (box.style.backgroundColor === 'tomato') {
+                colorInput.value = '#ff6347';
+            } else {
+                colorInput.value = '#3498db';
+            }
         }
+        
+        function applyCustomColor() {
+            const box = document.getElementById('colorBox');
+            const colorInput = document.getElementById('colorInput');
+            box.style.backgroundColor = colorInput.value;
+        }
+        
+        // Event listener untuk color picker
+        document.getElementById('colorInput').addEventListener('input', function() {
+            const box = document.getElementById('colorBox');
+            box.style.backgroundColor = this.value;
+        });
     </script>
 </body>
 </html>

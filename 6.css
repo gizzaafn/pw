@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+#dynamicContent {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.highlight {
+    color: white;
+    background-color: #2980b9;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+.animate {
+    transition: all 0.3s ease;
+    transform: scale(1.1);
+}
+
+button {
+    background-color: #3498db; /* Warna biru */
+    color: white; /* Warna teks putih */
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:active {
+    background-color: #2980b9;
+}

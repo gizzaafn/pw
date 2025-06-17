@@ -27,6 +27,15 @@
     <button id="loginBtn">Login untuk akses data</button>
 <button id="logoutBtn">Logout</button>
 
+<script>
+  document.getElementById('logoutBtn').addEventListener('click', function() {
+    // Jika ada session dihapus dulu, jika tidak langsung redirect
+    // Contoh hapus data sessionStorage/localStorage:
+    // sessionStorage.removeItem('isLoggedIn');
+    window.location.href = '../login/index.html'; // arahkan kembali ke halaman login
+  });
+</script>
+
   </div>
 
   <div id="content"></div>

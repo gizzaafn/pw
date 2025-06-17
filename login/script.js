@@ -33,7 +33,7 @@ if (document.getElementById('loginForm')) {
       sessionStorage.setItem('session', JSON.stringify(sessionData));
       setCookie('session_user', uname, 1); // expire in 1 day
 
-      window.location.href = 'home.html';
+      window.location.href = 'supa.html';
     } else {
       alert('Username atau password salah!');
     }

@@ -64,7 +64,7 @@ async function login() {
 
 async function logout() {
   await supabase.auth.signOut()
-  content.innerHTML = '<p>  Logout berhasil.</p>'
+  content.innerHTML = '<p>Logout berhasil.</p>'
 }
 
 // Load data hanya milik user yang login

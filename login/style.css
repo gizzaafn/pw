@@ -4,7 +4,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #1c1c1c;
-  background-color: #f3f2ef;
+  background-color: #e5f2f7;
 }
 
 h1, h2, h3 {
@@ -88,7 +88,7 @@ a {
 .content-card {
   margin: 0 30px 20px 30px;
   padding: 20px;
-  background: #fafafa;
+  background: #eaf2f4;
   border-radius: 10px;
 }
 

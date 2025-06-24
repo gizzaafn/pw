@@ -22,11 +22,9 @@
   </div>
 
   <div class="action-buttons">
-
-
-    <button id="loginBtn">Login untuk akses data</button>
-<button id="logoutBtn">Logout</button>
-
+    <button id="loginBtn">Login untuk Akses Data</button>
+    <button id="loginAdminBtn">Login Admin</button>
+    <button id="logoutBtn">Logout</button>
   </div>
 
   <div id="content"></div>
@@ -110,6 +108,9 @@ async function loadData() {
 
 document.getElementById('loginBtn').addEventListener('click', login)
 document.getElementById('logoutBtn').addEventListener('click', logout)
+document.getElementById('loginAdminBtn').addEventListener('click', function() {
+  window.location.href = 'admin.php';
+});
 
 
 window.addEventListener('DOMContentLoaded', async () => {

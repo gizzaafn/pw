@@ -67,7 +67,7 @@ const cancelBtn = document.getElementById('cancelBtn')
 
 // Fungsi load data ke tabel
 async function loadData() {
-  const { data, error } = await supabase.from('pw').select('*').order('id')
+  const { data, error } = await supabase.from('web3').select('*').order('id')
   if (error) {
     alert('Error loading data: ' + error.message)
     return

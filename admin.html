@@ -44,6 +44,8 @@
   </div>
 </form>
 
+<button id="logoutBtn" style="margin-top:30px; width:100%;">Logout</button>
+  
 <script type="module">
 // Import Supabase client dari CDN
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
@@ -152,6 +154,16 @@ cancelBtn.addEventListener('click', hideForm)
 
 // Load data saat halaman siap
 window.addEventListener('DOMContentLoaded', loadData)
+
+  // Fungsi Logout
+document.getElementById('logoutBtn').addEventListener('click', async function () {
+  // Jika kamu menggunakan auth Supabase, lakukan signOut:
+  if (supabase.auth) {
+    await supabase.auth.signOut();
+  }
+  // Redirect ke supa.html
+  window.location.href = 'supa.html';
+});
 
 </script>
 

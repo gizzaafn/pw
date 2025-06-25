@@ -44,7 +44,7 @@
   </div>
 </form>
 
-<button id="logoutBtn" style="margin-top:30px; width:100%;">Logout</button>
+<button id="logoutBtn">Logout</button>
   
 <script type="module">
 // Import Supabase client dari CDN
@@ -121,11 +121,11 @@ async function saveData(e) {
 
   if (id) {
     // Update
-    const { error } = await supabase.from('pw').update({ judul, isi }).eq('id', id)
+    const { error } = await supabase.from('web3').update({ judul, isi }).eq('id', id)
     if (error) return alert('Error update: ' + error.message)
   } else {
     // Insert
-    const { error } = await supabase.from('pw').insert([{ judul, isi }])
+    const { error } = await supabase.from('web3').insert([{ judul, isi }])
     if (error) return alert('Error insert: ' + error.message)
   }
 
@@ -157,12 +157,10 @@ window.addEventListener('DOMContentLoaded', loadData)
 
   // Fungsi Logout
 document.getElementById('logoutBtn').addEventListener('click', async function () {
-  // Jika kamu menggunakan auth Supabase, lakukan signOut:
   if (supabase.auth) {
     await supabase.auth.signOut();
-  }
-  // Redirect ke supa.html
-  window.location.href = 'supa.html';
+    localStorage.removeItem('sessionUser');
+    window.location.href = 'supa.html';
 });
 
 </script>

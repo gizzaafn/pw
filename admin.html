@@ -35,7 +35,6 @@
   <div style="margin-top:8px;">
     <label for="emailInput">Isi:</label><br/>
     <textarea id="emailInput"> </textarea>
-    <!-- <input type="email" id="emailInput" required /> -->
   </div>
   <div style="margin-top:15px;">
     <button type="submit">Simpan</button>
@@ -47,17 +46,13 @@
 <button id="logoutBtn">Logout</button>
   
 <script type="module">
-// Import Supabase client dari CDN
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
-
 
 const SUPABASE_URL = 'https://wnvomybupwsihhdisfjr.supabase.co'
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Indudm9teWJ1cHdzaWhoZGlzZmpyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDk1Mjc4NjIsImV4cCI6MjA2NTEwMzg2Mn0.tWVO648m7AGePvhv0KrHTq0QS2SEoHuhwAp2i71kuQg'
 
-
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
 
-// Elemen DOM
 const addBtn = document.getElementById('addBtn')
 const dataBody = document.getElementById('dataBody')
 const crudForm = document.getElementById('crudForm')
@@ -67,7 +62,6 @@ const emailInput = document.getElementById('emailInput')
 const deleteBtn = document.getElementById('deleteBtn')
 const cancelBtn = document.getElementById('cancelBtn')
 
-// Fungsi load data ke tabel
 async function loadData() {
   const { data, error } = await supabase.from('web3').select('*').order('id')
   if (error) {
@@ -84,7 +78,6 @@ async function loadData() {
   })
 }
 
-// Tampilkan form, isi dengan data jika ada
 function showForm(data = null) {
   if (data) {
     recordIdInput.value = data.id
@@ -100,14 +93,12 @@ function showForm(data = null) {
   nameInput.focus()
 }
 
-// Sembunyikan form
 function hideForm() {
   crudForm.style.display = 'none'
   recordIdInput.value = ''
   crudForm.reset()
 }
 
-// Simpan data (insert/update)
 async function saveData(e) {
   e.preventDefault()
   const id = recordIdInput.value
@@ -120,11 +111,9 @@ async function saveData(e) {
   }
 
   if (id) {
-    // Update
     const { error } = await supabase.from('web3').update({ judul, isi }).eq('id', id)
     if (error) return alert('Error update: ' + error.message)
   } else {
-    // Insert
     const { error } = await supabase.from('web3').insert([{ judul, isi }])
     if (error) return alert('Error insert: ' + error.message)
   }
@@ -133,7 +122,6 @@ async function saveData(e) {
   loadData()
 }
 
-// Hapus data
 async function deleteData() {
   const id = recordIdInput.value
   if (!id) return
@@ -146,21 +134,17 @@ async function deleteData() {
   loadData()
 }
 
-// Event listeners
 addBtn.addEventListener('click', () => showForm(null))
 crudForm.addEventListener('submit', saveData)
 deleteBtn.addEventListener('click', deleteData)
 cancelBtn.addEventListener('click', hideForm)
 
-// Load data saat halaman siap
 window.addEventListener('DOMContentLoaded', loadData)
 
-  // Fungsi Logout
 document.getElementById('logoutBtn').addEventListener('click', async function () {
-  if (supabase.auth) {
-    await supabase.auth.signOut();
-    localStorage.removeItem('sessionUser');
-    window.location.href = 'supa.html';
+  await supabase.auth.signOut();
+  localStorage.removeItem('sessionUser');
+  window.location.href = 'supa.html';
 });
 
 </script>
